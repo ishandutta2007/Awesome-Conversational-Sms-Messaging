@@ -22,11 +22,6 @@
       <stop offset="100%" stop-color="#ec4899" stop-opacity="0.8" />
     </linearGradient>
 
-    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.15" />
-    </linearGradient>
-
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="8" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -34,6 +29,7 @@
   </defs>
 
   <style>
+    <![CDATA[
     .title-text {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       font-weight: 800;
@@ -49,11 +45,10 @@
     .badge-text {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       font-weight: 600;
-      font-size: 12px;
+      font-size: 13px;
       fill: #e2e8f0;
     }
     
-    /* Dynamic pulsing & wave animations */
     @keyframes pulseGlow {
       0%, 100% { opacity: 0.25; transform: scale(1); }
       50% { opacity: 0.55; transform: scale(1.08); }
@@ -76,11 +71,11 @@
     }
 
     .bg-pulse-1 {
-      transform-origin: 200px 100px;
+      transform-origin: 220px 90px;
       animation: pulseGlow 7s ease-in-out infinite;
     }
     .bg-pulse-2 {
-      transform-origin: 1000px 250px;
+      transform-origin: 980px 270px;
       animation: pulseGlow 9s ease-in-out infinite;
     }
     .floating-card-1 {
@@ -96,12 +91,13 @@
     .ping-circle {
       animation: signalPulse 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
     }
+    ]]>
   </style>
 
   <!-- Background Canvas -->
   <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2" />
 
-  <!-- Animated Glowing Background Orbs (Behind everything) -->
+  <!-- Animated Glowing Background Orbs -->
   <circle class="bg-pulse-1" cx="220" cy="90" r="140" fill="#38bdf8" filter="url(#glow)" opacity="0.18" />
   <circle class="bg-pulse-2" cx="980" cy="270" r="160" fill="#a855f7" filter="url(#glow)" opacity="0.18" />
 
@@ -119,12 +115,12 @@
     <line x1="0" y1="270" x2="1200" y2="270" />
   </g>
 
-  <!-- Flow Wave Lines (Dynamic messaging waves in background) -->
+  <!-- Flow Wave Lines -->
   <path class="animated-wire" d="M -50 280 C 250 320, 400 230, 650 270 C 900 310, 1050 210, 1250 240" fill="none" stroke="url(#primaryGrad)" stroke-width="2" opacity="0.3" />
   <path class="animated-wire" d="M -50 110 C 200 60, 450 160, 750 90 C 950 40, 1100 130, 1250 80" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.2" />
 
-  <!-- Ambient Dynamic Floating Graphic (Left Side: SMS Chat Notification) -->
-  <g class="floating-card-1" opacity="0.75">
+  <!-- Ambient Dynamic Floating Graphic: SMS Chat Notification -->
+  <g class="floating-card-1" opacity="0.8">
     <rect x="60" y="55" width="210" height="65" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1" />
     <circle cx="90" cy="87" r="16" fill="url(#accentCyan)" />
     <!-- SMS icon -->
@@ -136,8 +132,8 @@
     <circle class="ping-circle" cx="250" cy="68" r="4" stroke="#10b981" stroke-width="1.5" fill="none" />
   </g>
 
-  <!-- Ambient Dynamic Floating Graphic (Right Side: Two-Way Omnichannel Bubble) -->
-  <g class="floating-card-2" opacity="0.75">
+  <!-- Ambient Dynamic Floating Graphic: Two-Way Omnichannel Bubble -->
+  <g class="floating-card-2" opacity="0.8">
     <rect x="930" y="55" width="210" height="65" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1" />
     <circle cx="960" cy="87" r="16" fill="url(#accentPurple)" />
     <!-- Bot/Omnichannel icon -->
@@ -146,38 +142,37 @@
     <rect x="985" y="91" width="130" height="6" rx="3" fill="#475569" />
   </g>
 
-  <!-- Foreground Content (Guaranteed Crisp & High-Contrast Front Layer) -->
+  <!-- Foreground Content -->
   <g transform="translate(600, 155)" text-anchor="middle">
     <!-- Main Title -->
     <text class="title-text" y="0">Awesome Conversational SMS &amp; Messaging</text>
     
     <!-- Subtitle -->
     <text class="subtitle-text" y="44">Curated Directory of Enterprise SaaS Solutions &amp; Open-Source Telephony Platforms</text>
-    <text class="subtitle-text" y="72" font-size="15px" fill="#64748b">Two-Way SMS • Omnichannel Inboxes • RCS &amp; WhatsApp • Conversational AI &amp; SMS Gateways</text>
+    <text class="subtitle-text" y="72" font-size="15px" fill="#64748b">Two-Way SMS &#8226; Omnichannel Inboxes &#8226; RCS &amp; WhatsApp &#8226; Conversational AI &amp; SMS Gateways</text>
   </g>
 
-  <!-- Interactive Pill Tags in Foreground Bottom Center -->
+  <!-- Pill Tags in Foreground Bottom Center -->
   <g transform="translate(600, 290)" text-anchor="middle">
     <!-- Tag 1 -->
-    <g transform="translate(-310, 0)">
+    <g transform="translate(-315, 0)">
       <rect x="-80" y="-16" width="160" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" />
-      <text class="badge-text" y="5">💬 Two-Way SMS</text>
+      <text class="badge-text" y="5">Two-Way SMS</text>
     </g>
     <!-- Tag 2 -->
     <g transform="translate(-105, 0)">
       <rect x="-85" y="-16" width="170" height="32" rx="16" fill="#1e293b" stroke="#818cf8" stroke-width="1.2" />
-      <text class="badge-text" y="5">📥 Omnichannel Inbox</text>
+      <text class="badge-text" y="5">Omnichannel Inbox</text>
     </g>
     <!-- Tag 3 -->
     <g transform="translate(105, 0)">
       <rect x="-85" y="-16" width="170" height="32" rx="16" fill="#1e293b" stroke="#c084fc" stroke-width="1.2" />
-      <text class="badge-text" y="5">⚡ Open-Source Gateways</text>
+      <text class="badge-text" y="5">Open Gateways</text>
     </g>
     <!-- Tag 4 -->
-    <g transform="translate(310, 0)">
+    <g transform="translate(315, 0)">
       <rect x="-80" y="-16" width="160" height="32" rx="16" fill="#1e293b" stroke="#ec4899" stroke-width="1.2" />
-      <text class="badge-text" y="5">🤖 Conversational AI</text>
+      <text class="badge-text" y="5">Conversational AI</text>
     </g>
   </g>
-
 </svg>
